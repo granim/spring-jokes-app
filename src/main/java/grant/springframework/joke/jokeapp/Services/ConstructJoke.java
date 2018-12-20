@@ -1,7 +1,5 @@
-package grant.springframework.joke.jokeapp.Model;
+package grant.springframework.joke.jokeapp.Services;
 
-
-import grant.springframework.joke.jokeapp.Services.JokeService;
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +7,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConstructJoke implements JokeService {
 
-    ChuckNorrisQuotes chuckNorrisQuotes = new ChuckNorrisQuotes();
+     private final ChuckNorrisQuotes chuckNorrisQuotes;
+
+     public ConstructJoke(){
+         this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+     }
 
     @Override
     public String createRandomQuote() {

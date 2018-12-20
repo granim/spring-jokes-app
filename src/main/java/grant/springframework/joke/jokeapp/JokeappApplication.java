@@ -16,7 +16,7 @@ public class JokeappApplication {
 
         ApplicationContext ctx = SpringApplication.run(JokeappApplication.class, args);
         MyController controller = (MyController) ctx.getBean("myController");
-        System.out.println(ctx.getBean(MyController.class).sayJoke());
+    //    System.out.println(ctx.getBean(MyController.class).sayJoke());
 
 
     }

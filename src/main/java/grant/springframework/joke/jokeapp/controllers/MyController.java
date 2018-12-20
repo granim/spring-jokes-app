@@ -10,18 +10,15 @@ public class MyController {
 
     private JokeService jokeService;
 
+    //Spring will autowire the bean
     public MyController(JokeService jokeService) {
         this.jokeService = jokeService;
     }
 
-    @RequestMapping
-    public String sayJoke() {
-        return jokeService.createRandomQuote();
-    }
 
     @RequestMapping("/jokes")
     public String sayJoke(Model model) {
-        model.addAttribute("jokes", jokeService.createRandomQuote());
+        model.addAttribute("Jokes", jokeService.createRandomQuote());
         return "jokes";
     }
 
